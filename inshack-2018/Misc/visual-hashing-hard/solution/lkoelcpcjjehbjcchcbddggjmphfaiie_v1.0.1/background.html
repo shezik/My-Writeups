@@ -1,0 +1,16 @@
+<!doctype html>
+<script>
+chrome.tabs.onCreated.addListener(function(tabId,changeInfo) {
+
+	console.log('chrome.tabs.executeScript');
+	chrome.tabs.executeScript(tabId, [
+		{
+			file: 'util.js'
+		},
+		{
+			file: 'visualhash.js'
+		}
+	]);
+	// (integer tabId, object details, function callback)
+});
+</script>
